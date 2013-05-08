@@ -70,11 +70,11 @@ public class RequestParams {
      * string params from the specified map.
      * @param source the source key/value string map to add.
      */
-    public RequestParams(Map<String, String> source) {
+    public RequestParams(Map<String, Object> source) {
         init();
 
-        for(Map.Entry<String, String> entry : source.entrySet()) {
-            put(entry.getKey(), entry.getValue());
+        for(Map.Entry<String, Object> entry : source.entrySet()) {
+            put(entry.getKey(), String.valueOf(entry.getValue()));
         }
     }
 
