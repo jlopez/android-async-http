@@ -105,7 +105,8 @@ public class RequestParams {
       for (int i = 0; i < len; i += 2) {
         String key = String.valueOf(keysAndValues[i]);
         String val = String.valueOf(keysAndValues[i + 1]);
-        put(key, val);
+        if (val != null)
+          put(key, val);
       }
     }
 
